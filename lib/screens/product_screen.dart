@@ -1,4 +1,5 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/product_data.dart';
 
@@ -105,6 +106,32 @@ class _ProductScreenState extends State<ProductScreen> {
                       );
                     }).toList(),
                   ),
+                ),
+                SizedBox( height: 16,),
+                SizedBox(
+                  height: 44,
+                  child: RaisedButton(
+                    onPressed: size != null ? (){} : null,
+                    child: Text(
+                      "Adicionar ao Carrinho!",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    color: primaryColor,
+                    textColor: Colors.white,
+
+                  ),
+                ),
+                SizedBox( height: 16,),
+                Text(
+                  "Descrição",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  product.description,
+                  style: TextStyle(fontSize: 16),
                 ),
               ],
             ),
