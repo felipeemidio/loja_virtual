@@ -8,6 +8,8 @@ class CartModel extends Model {
   UserModel user;
   List<CartProduct> products = [];
   bool isLoading = false;
+  String couponCode;
+  int discountPercentage = 0;
 
   CartModel(this.user) {
     if(user.isLoggedIn())
@@ -43,6 +45,11 @@ class CartModel extends Model {
   void decProduct(CartProduct cartProduct) {
     cartProduct.quantity--;
     _updateCartProduct(cartProduct);
+  }
+
+  void setCoupon(String couponCode, int discountPercentage) {
+    this.couponCode = couponCode;
+    this.discountPercentage = discountPercentage;
   }
 
   void _updateCartProduct(CartProduct cartProduct) {
